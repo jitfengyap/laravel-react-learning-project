@@ -19,7 +19,7 @@ class MessageController extends Controller
     public function byUser(User $user)
     {
         $messages = Message::where('sender_id', auth()->id())
-            ->where('received_id', $user->id)
+            ->where('receiver_id', $user->id)
             ->orWhere('sender_id', $user->id)
             ->where('receiver_id', auth()->id())
             ->latest()
@@ -36,7 +36,7 @@ class MessageController extends Controller
 
         $messages = Message::where('group_id', $group->id)
             ->latest()
-            ->paginate(50);
+            ->paginate(10);
 
         return inertia('Home', [
             'selectedConversation' => $group->toConversationArray(),

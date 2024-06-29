@@ -4,7 +4,6 @@ const UserAvatar = ({ user, online = null, profile = false }) => {
     let onlineClass =
         online === true ? "online" : online === false ? "offline" : "";
 
-    console.log("🚀 ~ UserAvatar ~ onlineClass:", onlineClass);
     const sizeClass = profile ? "w-40" : "w-8";
 
     return (

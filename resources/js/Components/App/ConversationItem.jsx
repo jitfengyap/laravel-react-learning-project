@@ -9,11 +9,8 @@ const ConversationItem = ({
     selectedConversation = null,
     online = null,
 }) => {
-    console.log("🚀 ~ conversation:", conversation.conversation);
     const page = usePage();
     const currentUser = page.props.auth.user;
-    console.log("🚀 ~ currentUser:", currentUser);
-    console.log("online", online);
     let classes = "border-transparaent";
     if (selectedConversation) {
         if (
